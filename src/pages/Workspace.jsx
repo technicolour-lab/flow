@@ -25,7 +25,7 @@ const Workspace = () => {
               <div className='flex items-center gap-2'>
                 <FiGitMerge />
                 <div className="font-bold relative">
-                  FlowHob
+                  Flow
                 </div>
               </div>
             </NavLink>

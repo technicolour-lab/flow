@@ -10,7 +10,7 @@ const Landing = () => {
             <LuDatabase className='text-blue-600'/> LocalStorage <strong>database</strong>
           </div>
           <div className='text-4xl font-bold bg-white'>
-              FlowHob - user flow builder
+              Flow - user flow builder
           </div>
           <div className='text-center'>
             Design and create interactive user flows.
