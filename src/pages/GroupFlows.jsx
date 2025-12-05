@@ -4,13 +4,13 @@ import { useOutletContext, useParams } from 'react-router-dom'
 const GroupFlows = () => {
 
   // Get the group from the URL parameters
-  const { groupId } = useParams()
+  const { groupName } = useParams()
 
   // Get flows data
   const {flows, groups, deleteFlow, updateFlow} = useOutletContext()
 
   // Filter flows by group
-  const flowsByGroup = flows.filter(flow => flow.group === groupId)
+  const flowsByGroup = flows.filter(flow => flow.group === groupName)
 
   return (
     <div>

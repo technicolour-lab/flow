@@ -16,7 +16,7 @@ const Installation = () => {
           <hr className='my-4' />
           <div className="mt-6">
             <p>
-            Follow these steps to set up the development environment for the FlowLite project. This guide will help you install all necessary dependencies.
+            Follow these steps to set up the development environment for the Flow project. This guide will help you install all necessary dependencies.
             </p>
             <h2 className='font-semibold text-xl my-2 text-slate-900'>
             Prerequisites
@@ -45,20 +45,20 @@ const Installation = () => {
             Vite.js 
             </h2>
             <p>
-            FlowLite is built using Vite.js (https://vitejs.dev/) a modern and lightning-fast build tool that improves the development experience. 
-            Vite.js is chosen for its speed and efficiency, offering features like instant server start, fast hot module replacement (HMR), and optimized builds for production.
+            Flow is built using Vite.js (https://vitejs.dev/) a modern and lightning-fast build tool that improves the development experience. 
+            Vite.js is chosen for its speed and efficiency, offering features like instant server start, fast hot module replacement (HMR), and optimised builds for production.
             </p>
           </div>
           <div className="mt-6">
             <h2 className='font-semibold text-xl my-2 text-slate-900'>
-            Setting Up the Project - FlowLite
+            Setting Up the Project - Flow
             </h2>
             <p>
-            Once you open FlowLite project you can open console, navigate to specific folder and install all dependencies:
+            Once you open Flow project you can open console, navigate to specific folder and install all dependencies:
             </p>  
             <pre className='my-6'>
                 <div className='p-4 bg-gray-800 text-white rounded-lg text-sm !whitespace-pre'>
-                  cd FlowLite/ {"\n"}
+                  cd Flow/ {"\n"}
                   npm install 
                 </div>
             </pre>
@@ -86,7 +86,7 @@ const Installation = () => {
               </div>
             </pre>
             <p className='bg-green-200 p-2 rounded text-sm'>
-            The FlowLite project don't require any backend services, so you can immediately open your browser and go to <span className='text-blue-600'>http://localhost:5173/</span> to start using the app.
+            The Flow project don't require any backend services, so you can immediately open your browser and go to <span className='text-blue-600'>http://localhost:5173/</span> to start using the app.
             </p>
             <p className='mt-2'>
               To build your app for production you can use a build option from Vite.js
@@ -104,15 +104,15 @@ const Installation = () => {
           </div>
           <div className="mt-6">
             <h2 className='font-semibold text-xl my-2 text-slate-900 flex gap-1'>
-              Setting Up the Project - FlowLite + Node.js
+              Setting Up the Project - Flow + Node.js
             </h2>
             <p>
-              Version of FlowLite + Node.js is build using two projects. So once you open <code>FlowLiteNodejs/</code> folder you will see two folders:
+              Version of Flow + Node.js is build using two projects. So once you open <code>FlowNodejs/</code> folder you will see two folders:
              </p>
              <pre className='my-4'>
               <div className="p-4 bg-gray-800 text-white rounded-lg text-sm">
                 <code>
-                FlowLiteNodejs/{"\n"}
+                FlowNodejs/{"\n"}
                 ├── frontend/{"\n"}
                 ├── backend/{"\n"}
                   </code>
@@ -155,7 +155,7 @@ const Installation = () => {
             <pre className='my-4'>
               <div className="p-4 bg-gray-800 text-white rounded-lg text-sm">
                 <code>
-flowlite@1.0.0 dev{"\n"}
+flow@1.0.0 dev{"\n"}
 nodemon src/server.js{"\n"}
 {"\n"}
 <div className='text-yellow-300'>
@@ -216,8 +216,8 @@ Server running on http://localhost:5000{"\n"}
                 Previous
               </dt>
               <dd className="mt-1">
-                <NavLink to={'/workspace/documentation/package'} className="text-base font-semibold text-slate-900 hover:underline">
-                  Package 
+                <NavLink to={'/workspace/documentation/introduction'} className="text-base font-semibold text-slate-900 hover:underline">
+                  Introduction 
                 </NavLink>
               </dd>
           </div>
@@ -226,8 +226,8 @@ Server running on http://localhost:5000{"\n"}
               Next
             </dt>
             <dd className="mt-1">
-              <NavLink to={'/workspace/documentation/database'} className="text-base font-semibold text-slate-900 hover:underline">
-                Database
+              <NavLink to={'/workspace/documentation/flows'} className="text-base font-semibold text-slate-900 hover:underline">
+                Flows
               </NavLink>
             </dd>
           </div>

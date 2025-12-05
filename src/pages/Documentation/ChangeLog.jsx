@@ -24,7 +24,7 @@ const ChangeLog = () => {
               <li>Fix: Share, actions, groups, keyboard - click outside ref</li>
               <li>Fix: Stop propagation on key down in label and url in node edit</li>
               <li>Fix: Name update in localStorage version</li>
-              <li>Fix: Orange stroke color for edges</li>
+              <li>Fix: Orange stroke colour for edges</li>
               <li>Improvement: Truncate large url in browser</li>
               <li>Improvement: Hide Toolbox on outside click</li>
               <li>Improvement: Remove passing id to the nodes for handlers (not necessary)</li>

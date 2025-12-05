@@ -37,7 +37,7 @@ const EditEdge = () => {
                 Set the line style and stroke width
                 </li>
                 <li>
-                Set the color
+                Set the colour
                 </li>
 
               </ul>

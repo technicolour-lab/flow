@@ -7,4 +7,5 @@ export const colors = {
   sky: {stroke: "#38bdf8", bgClass: 'bg-sky-50', borderClass: 'border-sky-400', fillClass: 'fill-sky-50', previewClass: 'bg-sky-400'},
   blue: {stroke: "#60a5fa", bgClass: 'bg-blue-50', borderClass: 'border-blue-400', fillClass: 'fill-blue-50', previewClass: 'bg-blue-400'},
   indigo: {stroke: "#818cf8", bgClass: 'bg-indigo-50', borderClass: 'border-indigo-400', fillClass: 'fill-indigo-50', previewClass: 'bg-indigo-400'},
+  purple: {stroke: "#a855f7", bgClass: 'bg-purple-50', borderClass: 'border-purple-400', fillClass: 'fill-purple-50', previewClass: 'bg-purple-400'},
 }

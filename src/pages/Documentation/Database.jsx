@@ -15,22 +15,24 @@ const Database = () => {
           </header>
           <hr className='my-4' />
           <div className="mt-6">
-            <p className='text-xl'>
-            HobboFlow offers two approaches for database integration
-            </p>
-            <ul className='my-4 list-disc ml-5 leading-7'>
-              <li><strong>Local Storage </strong> -  The demo version of FlowLite use the browser's local storage as a database</li>
-              <li><strong>Node.js with SQLite</strong> - This version use a Node.js backend with an SQLite database for data storage and management. It offers a more scalable and flexible solution, enabling API-based interactions</li></ul>
             <p>
-            All the logic for managing the existing state of a flow (nodes and edges) and groups is handled by custom hooks called <strong>useFlow</strong> and <strong>useGroups</strong>.
-            These hooks include separate services files responsible for connecting with the API.
-             This separation makes it easy to implement your own API for storing the data. 
-             For example to get all flows in the service file there is a function apiGetFlows with standard try/catch block and api call inside:<br/> 
-             <span className='font-mono bg-gray-100 p-0.5 px-2 text-xs rounded-lg'>await api.get('/flows');</span>
-              Where <strong>api</strong> method is an instance of axios. So at the end all you need to do is to change the url to your api. Full working example of this you can find in FlowLite + Node.js where Node.js server is used as an api backend.
+            The Flow app uses local storage as its database, making it easy to use in any environment without requiring a server.
+            </p>
+            <br/>
+            <p className='text-xl'>
+            This <strong>database-agnostic</strong> approach allows easy connections to your own database or external APIs. Flow has only two tables for storing information: <strong>Flows</strong> and <strong>Groups</strong>.
             </p>
             <br/>
             <p>
+            All the logic for managing the existing state of a flow (nodes and edges) is handled by a custom hook called <strong>useFlow</strong>. This hook includes a function named <strong>updateStorage</strong>, which takes the current state of the flow and, with a slight debounce, saves it to local storage. This separation makes it easy to implement your own API for storing the data.
+            </p>
+            <p>
+            In addition to useFlow, there are also general hooks: useFlows for adding, deleting, and updating flow, and useGroups for managing groups.
+            </p>
+            <br/>
+            <p>
+            At the top of the custom hooks managing the state for flows and groups, you will find a table structure outlining the column names and their data types.
+            
             If you need any assistance with creating your own database API or require detailed information, please contact us through our support channel. <NavLink to={'/workspace/documentation/support'} className='text-blue-600 font-semibold'> Support</NavLink>
             </p>
           </div>

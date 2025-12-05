@@ -16,7 +16,7 @@ const Package = () => {
           <hr className='my-4' />
           <div className="mt-6">
             <p>
-            When you purchase FlowLite from CodeCanyon, the download includes a ZIP package containing all the necessary files to get started. Below is a summary of what you can find in the package:
+            When you purchase Flow from CodeCanyon, the download includes a ZIP package containing all the necessary files to get started. Below is a summary of what you can find in the package:
             </p>
             <h2 className='font-semibold text-xl my-3 text-gray-900'>
             What’s Included in the ZIP Package
@@ -25,12 +25,12 @@ const Package = () => {
             <li><p className="text-gray-900"><strong>Documentation (<code>Documentation/</code>)</strong>:</p>
             Documentation includes step-by-step installation instructions and a guide to understanding the basic usage of the app.</li>
               <li>
-                <p className='text-gray-900'><strong>Flow Lite App (<code>FlowLite/</code>)</strong>:</p>
-                The complete source code of the demo FlowLite app. This folder contains the full web app as shown in the demo link. Demo version use localStorage as a database.
+                <p className='text-gray-900'><strong>Flow App (<code>Flow/</code>)</strong>:</p>
+                The complete source code of the demo Flow app. This folder contains the full web app as shown in the demo link. Demo version use localStorage as a database.
               </li>
               <li>
-                <p className='text-gray-900'><strong>Flow Lite + Node.js (<code>FlowLiteNodejs/</code>)</strong>:</p>
-                The complete source code of the FlowLite app with node.js server as a backend and sqlite as a database.
+                <p className='text-gray-900'><strong>Flow + Node.js (<code>FlowNodejs/</code>)</strong>:</p>
+                The complete source code of the Flow app with node.js server as a backend and sqlite as a database.
               </li>
             </ul>
           </div>

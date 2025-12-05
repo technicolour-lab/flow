@@ -26,9 +26,9 @@ const Actions = ({flow, deleteFlow, groups, updateFlow}) => {
     setShowMenu(true);
   }
 
-  const handleChangeGroup = (e, group) => {
+  const handleChangeGroup = (e, groupId) => {
     e.stopPropagation();
-    updateFlow(flow.id, {group: group});
+    updateFlow(flow.id, {group: groupId});
     setShowMenu(false);
   }
 

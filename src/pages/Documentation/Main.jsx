@@ -17,21 +17,6 @@ const Main = () => {
                     Introduction
                   </NavLink>
                 </li>
-                <li>
-                <NavLink to={'package'} className='[&.active]:bg-gray-100 px-2 py-1 rounded-md hover:bg-gray-50 block'>
-                    Package
-                  </NavLink>
-                </li>
-                <li>
-                <NavLink to={'installation'} className='[&.active]:bg-gray-100 px-2 py-1 rounded-md hover:bg-gray-50 block'>
-                    Installation
-                  </NavLink>
-                </li>
-                <li>
-                <NavLink to={'database'} className='[&.active]:bg-gray-100 px-2 py-1 rounded-md hover:bg-gray-50 block'>
-                    Database
-                  </NavLink>
-                </li>
               </ul>
             </li>
             <li>

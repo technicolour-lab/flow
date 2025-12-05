@@ -34,10 +34,13 @@ const useFlow = (flowId) => {
     const fetchFlow = async () => {
       try {
         // Fetch flow data from the API
-        const flowData = apiGetFlow(flowId);
+        const flowData = await apiGetFlow(flowId);
         
-        // If no data is returned, stop 
-        if (!flowData) return;
+        // If no data is returned 
+        if (!flowData) {
+          setFlow(undefined);
+          return;
+        };
 
         // Update state with the fetched flow details
         setFlow({

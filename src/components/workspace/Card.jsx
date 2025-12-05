@@ -17,7 +17,7 @@ const Card = ({flow}) => {
     Object.fromEntries(
       Object.entries(nodesTypes).map(([key, val]) => [key, val.component])
     ), 
-    []
+    [nodesTypes]
   );
 
   // Modify the nodes to disable pointer interactions for preview mode
@@ -69,7 +69,7 @@ const Card = ({flow}) => {
             <TimeAgo date={flow.updatedAt}/>
           </div>
           <div className='flex items-center justify-between gap-2'>
-          <div className='text-sm font-semibold overflow-ellipsis whitespace-nowrap overflow-hidden pr-4'>
+          <div className='text-sm font-semibold text-gray-900 overflow-ellipsis whitespace-nowrap overflow-hidden pr-4'>
             {flow.name}
           </div>
         </div>

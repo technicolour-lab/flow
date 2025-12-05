@@ -17,7 +17,7 @@ const Flows = () => {
           <hr className='my-4' />
           <div className="mt-6">
             <p>
-              When you open the FlowLite app, you'll be greeted with the main workspace page.
+              When you open the Flow app, you'll be greeted with the main workspace page.
             </p>
             <div className='p-4 my-2'>
               <img className='rounded-md shadow-xl w-full border' src='/doc/workspace.png'/>
@@ -52,8 +52,8 @@ const Flows = () => {
                 Previous
               </dt>
               <dd className="mt-1">
-                <NavLink to={'/workspace/documentation/database'} className="text-base font-semibold text-slate-900 hover:underline">
-                  Database
+                <NavLink to={'/workspace/documentation/introduction'} className="text-base font-semibold text-slate-900 hover:underline">
+                  Introduction
                 </NavLink>
               </dd>
           </div>

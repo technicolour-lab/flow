@@ -29,7 +29,7 @@ const Circle = ({data, selected, width, height}) => {
         </svg>
         {/* Label centered inside the circle */}
         <div className='absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center'>
-            <span className='font-bold text-[10px] text-nowrap'>
+            <span className='font-bold text-[10px] text-gray-900 text-nowrap'>
               {data.label} 
             </span>
           </div>

@@ -8,7 +8,7 @@ const ErrorPage = () => {
 
   return (
     <div className='w-full h-screen flex items-center justify-center bg-slate-50'>
-      <div className='text-sm font-medium flex items-center flex-col gap-2 p-10'>
+      <div className='text-sm font-medium flex items-center flex-col gap-2'>
         {
           (error?.data || error?.message) && !production ? <div className='bg-slate-100 p-3 rounded font-mono'>Error: {error.data || error.message}</div> :  <div className='text-slate-800'>Page not found</div>
         }

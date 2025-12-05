@@ -27,7 +27,7 @@ const Rectangle = ({data, selected, width, height}) => {
           </g>
         </svg>
         <div className='absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center'>
-            <div className='font-bold text-[10px] p-2'>
+            <div className='font-bold text-[10px] text-gray-900 p-2'>
               {data.label} 
             </div>
           </div>

@@ -5,7 +5,7 @@ import Groups from './Groups'
 // Menu renders the workspace and groups components
 const Menu = ({groups, addGroup, changeColor, deleteGroup, clearGroupInFlows}) => {
   return (
-    <div className='flex-1 p-6 flex flex-col gap-1 text-sm font-semibold'> 
+    <div className='flex-1 p-6 flex flex-col gap-1 text-sm font-semibold text-gray-900'> 
       <Workspace />
       <Groups groups={groups} addGroup={addGroup} changeColor={changeColor} deleteGroup={deleteGroup} clearGroupInFlows={clearGroupInFlows} />
     </div>

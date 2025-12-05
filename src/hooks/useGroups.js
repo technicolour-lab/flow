@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { nanoid } from "nanoid";
-import { apiGetGroups, apiUpdateGroups } from "../services/groupService";
+import { apiGetGroups, apiUpdateGroup, apiAddGroup, apiDeleteGroup } from "../services/groupService";
 
 const useGroups = () => {
 
@@ -15,7 +14,7 @@ const useGroups = () => {
     setLoading(true)
     const fetchGroups = async () => {
       try {
-        const storageGroups = apiGetGroups();
+        const storageGroups = await apiGetGroups();
         setGroups(storageGroups)
       } catch (err) {
         setError(err);
@@ -27,45 +26,52 @@ const useGroups = () => {
     fetchGroups();
   }, []);
 
-  const addGroup = (name) => {
-    const id = nanoid(8)
-    const newGroup = {id: id, name: name, color: "gray"}
-    setGroups(prev => {
-      const updatedGroups = [...prev, newGroup] 
-      updateStorage(updatedGroups)
-      return updatedGroups
-    })
-  }
+  const addGroup = async (name) => {
 
-  const changeColor = (groupId, color) => {
+    const newGroup = {name: name, color: "gray"}
 
-    setGroups(prev => {
-      const updatedGroups = prev.map(group => {
-        if(group.id === groupId) {
-          return {...group, color: color}
-        }
-        return group
-      })
-
-      updateStorage(updatedGroups)
-      return updatedGroups
-    })
-
-  }
-
-  const deleteGroup = (groupId) => {
-    setGroups(prev => {
-      const updatedGroups = prev.filter(group => group.id !== groupId)
-      updateStorage(updatedGroups)
-      return updatedGroups
-    })
-  }
-
-  // Update to localStorage
-  const updateStorage = (updatedGroups) => {
-    setLoading(true);
     try {
-      apiUpdateGroups(updatedGroups)
+      const groupAdded = await apiAddGroup(newGroup);
+      setGroups(prev => {
+        const updatedGroups = [...prev, groupAdded] ;
+        return updatedGroups;
+      })
+    } catch (err) {
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
+    
+  }
+
+  const changeColor = async (groupId, color) => {
+    const groupData = { color: color};
+    try {
+      await apiUpdateGroup(groupId, groupData);
+      setGroups(prev => {
+        const updatedGroups = prev.map(group => {
+          if(group.id === groupId) {
+            return {...group, color: color}
+          }
+          return group
+        })
+  
+        return updatedGroups
+      });
+    } catch (err) {
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  const deleteGroup = async (groupId) => {
+    try {
+      await apiDeleteGroup(groupId);
+      setGroups(prev => {
+        const updatedGroups = prev.filter(group => group.id !== groupId)
+        return updatedGroups
+      })
     } catch (err) {
       setError(err);
     } finally {

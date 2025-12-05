@@ -17,13 +17,14 @@ const Editor = () => {
   const { flowId } = useParams();
 
   // Get the flow data
-  const { flow, addNode, updateNode, updateEdge, updateDataEdge, changeName, nodes, edges, onNodesChange, onEdgesChange, onConnect,  loading } = useFlow(flowId);
+  const { flow, loading, addNode, updateNode, updateEdge, updateDataEdge, changeName, nodes, edges, onNodesChange, onEdgesChange, onConnect} = useFlow(flowId);
 
-  // If data is still loading, return nothing
-  if(loading) return;
+  // If data is still loading, return
+  // TODO add spinner
+  if(loading || flow === null) return;
 
   // If no flow exists, display error page
-  if(!flow) return <ErrorPage/>;
+  if(!loading && !flow) return <ErrorPage/>;
 
   return (
     <div>

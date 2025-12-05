@@ -17,7 +17,7 @@ const Groups = () => {
           <hr className='my-4' />
           <div className="mt-6">
             <p>
-              In the menu on the left side, you'll find the Groups section. Groups are used to easily categorize your flows, helping you stay organized.
+              In the menu on the left side, you'll find the Groups section. Groups are used to easily categorise your flows, helping you stay organised.
             </p>
             <div className='p-4 my-2'>
               <img className='rounded-md shadow-xl w-1/4 border' src='/doc/groups.png'/>
@@ -29,7 +29,7 @@ const Groups = () => {
               <img className='rounded-md shadow-xl w-1/4 border' src='/doc/groupform.png'/>
             </div>
             <p>
-            Each group has a color attribute that you can change by clicking the dots button to the right of the group name.
+            Each group has a colour attribute that you can change by clicking the dots button to the right of the group name.
             </p>
             <div className='p-4 my-2'>
               <img className='rounded-md shadow-xl w-1/4 border' src='/doc/groupedit.png'/>

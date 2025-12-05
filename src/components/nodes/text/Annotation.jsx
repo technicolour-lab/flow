@@ -12,7 +12,7 @@ const Annotation = ({data, selected, width, height}) => {
   return (
     <Resizer selected={selected} data={data}handles={false}>
       <div style={{width: nodeWidth, height: nodeHeight}} className='p-2 overflow-hidden'>
-        <div className='text-xs whitespace-pre-line'>
+        <div className='text-xs text-gray-900 whitespace-pre-line'>
           {data.label} 
         </div>
       </div>

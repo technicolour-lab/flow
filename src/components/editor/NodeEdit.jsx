@@ -61,14 +61,14 @@ const NodeEdit = ({node, updateNode, deleteElements}) => {
       {/* Label */}
       <div>
         <label  className="block mb-2 text-sm font-medium text-gray-900 ">Label</label>
-        <textarea type="text" rows={3} value={label} onKeyDown={(e) => e.stopPropagation()} onChange={handleLabelChange} className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "  />
+        <textarea type="text" rows={3} value={label} onChange={handleLabelChange} onKeyDown={(e) => e.stopPropagation()} className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "  />
       </div>
 
       {/* If the node is a wireframe, display the URL input field */}
       {nodeGroup === 'wireframe' && 
       <div>
         <label  className="block mb-2 text-sm font-medium text-gray-900 ">Url</label>
-        <input type="text" value={url} onKeyDown={(e) => e.stopPropagation()} onChange={handleUrlChange} className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "  />
+        <input type="text" value={url} onChange={handleUrlChange} onKeyDown={(e) => e.stopPropagation()} className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "  />
       </div>
       }
 

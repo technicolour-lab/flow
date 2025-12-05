@@ -22,16 +22,16 @@ const EditNode = () => {
               <img className='rounded-md shadow-xl w-full border' src='/doc/editnode.png'/>
             </div>
             <p>
-              Regardless of the node type (Wireframe, Shape, or Social), there are two options in the edit node window: changing the label of the node or changing the color of the node.
+              Regardless of the node type (Wireframe, Shape, or Social), there are two options in the edit node window: changing the label of the node or changing the colour of the node.
             </p>
             <p>
-            In Wireframe and Social Icon nodes, the label is placed on top of the node. In Shape nodes, the label is placed in the center of the shape.
+            In Wireframe and Social Icon nodes, the label is placed on top of the node. In Shape nodes, the label is placed in the centre of the shape.
             </p>
             <div className='p-4 my-2'>
               <img className='rounded-md shadow-xl w-full border' src='/doc/labels.png'/>
             </div>
             <p>
-            The color option allows you to change both the border and the background color of the node.
+            The colour option allows you to change both the border and the background colour of the node.
             </p>
             <div className='p-4 my-2'>
               <img className='rounded-md shadow-xl w-full border' src='/doc/colors.png'/>

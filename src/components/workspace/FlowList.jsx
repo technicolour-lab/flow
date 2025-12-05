@@ -30,13 +30,10 @@ const FlowList = ({flows, addFlow, listDisplay = false, deleteFlow, groups, upda
     return '';
   }
 
-  // Returns the group name from groups
-  const groupName = (groupId) => {
+  // Get group name by id
+  const getgroupName = (groupId) => {
     const group = groups.find(group => group.id === groupId);
-    if(group) {
-      return group.name;
-    }
-    return '';
+    return group?.name;
   }
 
   return (
@@ -54,11 +51,11 @@ const FlowList = ({flows, addFlow, listDisplay = false, deleteFlow, groups, upda
       <div className='relative' key={flow.id}>
         <div onClick={() => handleOpenFlow(flow.id)}  className='border rounded-md p-2 px-4 hover:border-blue-600 cursor-pointer'>
           <div className='flex items-center gap-3'>
-            <div className='text-sm font-semibold'>
+            <div className='text-sm font-semibold text-gray-900'>
               {flow.name}
             </div>
             <div className={'text-xs py-0.5 px-1 rounded ' + groupColor(flow.group)}>
-              {groupName(flow.group)}
+              {getgroupName(flow.group)}
             </div>
           </div>
         </div>
@@ -72,7 +69,7 @@ const FlowList = ({flows, addFlow, listDisplay = false, deleteFlow, groups, upda
       <div className='grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
         <button onClick={handleAddNewFlow} className='border rounded-md h-[172px] p-2 w-full flex flex-col items-center justify-center gap-2 hover:border-blue-500'>
           <PiPlusBold />
-          <div className='text-xs font-semibold '>
+          <div className='text-xs font-semibold text-gray-900'>
             Create new
           </div>
         </button>

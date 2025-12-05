@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { nanoid } from "nanoid";
-import { apiGetFlows, apiUpdateFlows } from "../services/flowService";
+import { apiAddFlow, apiDeleteFlow, apiGetFlows, apiUpdateFlow } from "../services/flowService";
 
 const useFlows = () => {
 
@@ -15,7 +14,7 @@ const useFlows = () => {
     setLoading(true)
     const fetchPlans = async () => {
       try {
-        const storageFlows = apiGetFlows()
+        const storageFlows = await apiGetFlows()
         setFlows(storageFlows)
       } catch (err) {
         setError(err);
@@ -27,37 +26,57 @@ const useFlows = () => {
     fetchPlans();
   }, []);
 
-  const addFlow = () => {
-    const id = nanoid(8)
+  const addFlow = async () => {
+
     const number = flows.length + 1
-    const newFlow = {id: id, name: `Flow ${number}`, nodes: [], edges: [], group: null, updatedAt: Date.now()}
-    setFlows(prev => {
-      const updatedFlows = [...prev, newFlow] 
-      updateStorage(updatedFlows)
-      return updatedFlows
-    })
-    return {id: id}
+    const newFlow = { name: `Flow ${number}`, nodes: [], edges: [], group: null}
+    try {
+      const flowAdded = await apiAddFlow(newFlow);
+      return {id: flowAdded.id}
+    } catch (err) {
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
+    
   }
 
-  const deleteFlow = (flowId) => {
-    setFlows(prev => {
-      const updatedFlows = prev.filter(flow => flow.id !== flowId)
-      updateStorage(updatedFlows)
-      return updatedFlows
-    })
+  const deleteFlow = async (flowId) => {
+    try {
+      await apiDeleteFlow(flowId);
+      setFlows(prev => {
+        const updatedFlows = prev.filter(flow => flow.id !== flowId)
+        return updatedFlows
+      })
+    } catch (err) {
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
   }
 
   const updateFlow = (flowId, data) => {
-    setFlows(prev => {
-      const updatedFlows = prev.map(flow => {
-        if(flow.id === flowId) {
-          return {...flow, ...data}
-        }
-        return flow
+    setLoading(true);
+    try {
+      const flowData = {
+        ...data, 
+        updatedAt: Date.now()
+      }
+      apiUpdateFlow(flowId, flowData);
+      setFlows(prev => {
+        const updatedFlows = prev.map(flow => {
+          if(flow.id === flowId) {
+            return {...flow, ...data}
+          }
+          return flow
+        })
+        return updatedFlows
       })
-      updateStorage(updatedFlows)
-      return updatedFlows
-    })
+    } catch (err) {
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
   }
 
   const clearGroupInFlows = (groupId) => {
@@ -68,22 +87,11 @@ const useFlows = () => {
         }
         return flow
       })
-      updateStorage(updatedFlows)
       return updatedFlows
     })
+    // TODO clear all flows that contains this group
   }
 
-  // Update to localStorage
-  const updateStorage = (updatedFlows) => {
-    setLoading(true);
-    try {
-      apiUpdateFlows(updatedFlows)
-    } catch (err) {
-      setError(err);
-    } finally {
-      setLoading(false);
-    }
-  }
 
   return {flows, addFlow, deleteFlow, updateFlow, clearGroupInFlows, loading, error}
 }

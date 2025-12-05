@@ -130,7 +130,7 @@ const FlowEditor = ({nodes, edges, onNodesChange, onEdgesChange, onConnect, addN
           nodesDraggable={!autoLayout.active}
           onSelectionChange={onSelection}
           fitView
-          fitViewOptions={{ padding: 0.4, maxZoom:1.4}}
+          fitViewOptions={{ padding: 0.3, maxZoom: 0.9}}
           defaultViewport={{zoom: 1.4, x: 0, y: 0}}
           snapToGrid={snapToGrid}
           minZoom={0.2}

@@ -13,7 +13,7 @@ const AllFlows = () => {
   return (
     <div>
       <div className='mb-4'>
-        <div className='text-xl font-semibold'>Flows</div>
+        <div className='text-xl font-semibold text-gray-900'>Flows</div>
         <div className='text-sm text-gray-500'> Create a new flow or modify your recent work.</div>
       </div>
 
@@ -23,7 +23,7 @@ const AllFlows = () => {
       {/* List of all flows */}
       <hr className='my-8'/>
       <div className='mb-4'>
-        <div className='text-xl font-semibold'>All</div>
+        <div className='text-xl font-semibold text-gray-900'>All</div>
         <div className='text-sm text-gray-500'> View, manage, or update your flows.</div>
       </div>
       <FlowList flows={flows} listDisplay deleteFlow={deleteFlow} groups={groups} updateFlow={updateFlow}/>

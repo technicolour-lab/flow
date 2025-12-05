@@ -11,6 +11,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Ensure text is visible by default */
+@layer base {
+  body {
+    @apply text-gray-900;
+  }
+  
+  html {
+    @apply text-gray-900;
+  }
+}
+
 /* Global changes to button */
 button {
   @apply outline-none

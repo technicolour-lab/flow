@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import {LuCopy, LuGlobe, LuShare2, LuUsers, LuX } from 'react-icons/lu'
+import {LuCopy, LuGlobe, LuShare2,  LuX } from 'react-icons/lu'
 
 const Share = ({flowId}) => {
 
@@ -70,8 +70,8 @@ const Share = ({flowId}) => {
         </div>
         <div className='mt-2'>
           <div className='border rounded overflow-hidden flex text-xs'>
-            <div className='bg-gray-50 px-2 flex items-center select-all text-nowrap' ref={viewUrlRef}>
-              {`http://{domain_name}/v/${flowId}`}
+            <div className='bg-gray-50 px-2 flex items-center select-all' ref={viewUrlRef}>
+              {`http://{your_domain_name}/v/${flowId}`}
             </div>
             <button onClick={handleCopyUrl} className='bg-white flex items-center justify-center gap-1 px-2 w-24 h-7 hover:bg-gray-100 active:bg-gray-200 border-l'>
               <LuCopy />
@@ -79,9 +79,6 @@ const Share = ({flowId}) => {
                 Copy link
               </div>
             </button>
-          </div>
-          <div className='text-xs px-2 p-1 bg-slate-50 border border-slate-400 rounded mt-4 font-medium text-slate-700'>
-            Demo app uses <strong>local storage</strong> and share link will not function.
           </div>
         </div>
       </div>

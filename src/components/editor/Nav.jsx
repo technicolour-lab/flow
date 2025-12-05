@@ -48,7 +48,7 @@ const Nav = ({flow, changeName}) => {
             <LuPresentation /> Preview
           </Link>
           <Export flowName={flow.name}/>
-          <Share flowId={flow.id}/>
+          <Share flowId={flow.id} />
         </div>
       </div>
   )

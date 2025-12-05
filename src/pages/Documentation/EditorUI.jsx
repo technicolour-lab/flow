@@ -22,7 +22,7 @@ const EditorUI = () => {
               <img className='rounded-md shadow-xl w-full border' src='/doc/emptyeditor.png'/>
             </div>
             <p>
-            In the top-left corner, you will find the FlowLite button, which takes you to the workspace page where you can see a list of your flows. Next to it is the current title of your flow, which is editable. You can click on it to update the title.
+            In the top-left corner, you will find the Flow button, which takes you to the workspace page where you can see a list of your flows. Next to it is the current title of your flow, which is editable. You can click on it to update the title.
             </p>
             <div className='p-4 my-2'>
               <img className='rounded-md shadow-xl w-1/3 border' src='/doc/toolbox.png'/>
@@ -38,7 +38,7 @@ const EditorUI = () => {
               <img className='rounded-md shadow-xl w-1/4 border' src='/doc/magnet.png'/>
             </div>
             <p>
-            At the bottom center, you will find the view controls. You can zoom in, zoom out, or use the middle button to fit your flow to the current view.
+            At the bottom centre, you will find the view controls. You can zoom in, zoom out, or use the middle button to fit your flow to the current view.
             </p>
             <div className='p-4 my-2'>
               <img className='rounded-md shadow-xl w-1/4 border' src='/doc/viewcontrols.png'/>
